@@ -107,7 +107,7 @@ def process_audio_gemini(uploaded_file: Any, teacher_focus: str, target_language
             "Do not invent names, dates, or tasks."
         )
         response = client.models.generate_content(
-            model=os.getenv("GEMINI_MODEL", "gemini-2.0-flash"),
+            model=os.getenv("GEMINI_MODEL", "gemini-3.6-flash"),
             contents=[uploaded_audio, prompt],
             config=types.GenerateContentConfig(response_mime_type="application/json", temperature=0.2),
         )
