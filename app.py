@@ -377,7 +377,10 @@ with st.sidebar:
         disabled=processing_mode == "Demo / Test",
     )
     if processing_mode == "Google Gemini cloud":
-        st.caption("Gemini processes audio on the cloud. The administrator must configure GEMINI_API_KEY.")
+        if server_api_key("GEMINI_API_KEY"):
+            st.caption("Gemini processes audio on the cloud for every device.")
+        else:
+            st.warning("Add GEMINI_API_KEY in Streamlit App Settings > Secrets before using cloud mode.")
     elif local_mode:
         st.caption("Free local mode needs Ollama and the llama3.2 model on this computer.")
     else:
