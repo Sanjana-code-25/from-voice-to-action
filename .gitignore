@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.env
+.streamlit/
+*.pyc
+notes_history.json
+teacher_messages.json
